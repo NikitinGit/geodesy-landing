@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Геодезические услуги для строительства, проектирования и землеустройства">
-    <title>Геодезические услуги для строительства</title>
+    <title>Геодезия - Технологии меняющие мир</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <div class="logo">
-                    <span class="logo__text">ГЕОДЕЗИЯ</span>
-                </div>
-                <nav class="nav">
+                <a href="#" class="logo">Hexagon</a>
+                <nav class="nav" id="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#about" class="nav__link">О НАС</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">УСЛУГИ</a></li>
-                        <li class="nav__item"><a href="#process" class="nav__link">КАК МЫ РАБОТАЕМ</a></li>
-                        <li class="nav__item"><a href="#price" class="nav__link">ПРАЙС</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">КОНТАКТЫ</a></li>
+                        <li><a href="#features" class="nav__link">Характеристики</a></li>
+                        <li><a href="#advantages" class="nav__link">Преимущества</a></li>
+                        <li><a href="#about" class="nav__link">О нас</a></li>
+                        <li><a href="#contact" class="nav__link">Контакты</a></li>
                     </ul>
                 </nav>
                 <button class="burger" id="burger">
@@ -37,10 +36,186 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero__content">
-                <h1 class="hero__title">Геодезические услуги для строительства</h1>
-                <p class="hero__subtitle">Геодезические работы для строительства, проектирования и землеустройства</p>
-                <button class="btn btn--primary">Оставить заявку</button>
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <h1 class="hero__title">Технологии<br>меняющие мир</h1>
+                    <p class="hero__subtitle">Радиомодемы Trimble TDL 450L System Kit</p>
+                    <a href="#contact" class="btn btn--primary">Заказать звонок</a>
+                </div>
+                <div class="hero__image">
+                    <div class="hero__image-placeholder">
+                        <svg viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="60" y="50" width="80" height="200" rx="5" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="100" cy="100" r="25" stroke="#f5a623" stroke-width="2"/>
+                            <line x1="100" y1="0" x2="100" y2="50" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="100" cy="280" r="15" stroke="#f5a623" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section__title">Характеристики</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <span class="feature-card__label">Частота</span>
+                    <p class="feature-card__value">430 — 450 MHz</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Рабочая температура</span>
+                    <p class="feature-card__value">-40°C — +65°C</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Скорость передачи</span>
+                    <p class="feature-card__value">19200 бит/сек</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Разъем антенны</span>
+                    <p class="feature-card__value">FME / CFX-750</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Выходная мощность</span>
+                    <p class="feature-card__value">0,1 — 2 Вт</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Тип модуля</span>
+                    <p class="feature-card__value">UHF</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Потребляемая мощность</span>
+                    <p class="feature-card__value">35 Вт</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-card__label">Степень защиты</span>
+                    <p class="feature-card__value">IP67</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="applications">
+        <div class="container">
+            <h2 class="section__title">Применение</h2>
+            <div class="applications__inner">
+                <div class="applications__image">
+                    <div class="applications__image-placeholder">
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="150" y="100" width="100" height="150" rx="5" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="200" cy="50" r="30" stroke="#f5a623" stroke-width="2"/>
+                            <line x1="50" y1="250" x2="350" y2="250" stroke="#f5a623" stroke-width="2"/>
+                            <line x1="200" y1="80" x2="200" y2="100" stroke="#f5a623" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="applications__content">
+                    <div class="applications__list">
+                        <div class="application-item">
+                            <div class="application-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <span>Геодезия</span>
+                        </div>
+                        <div class="application-item">
+                            <div class="application-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M3 9h18"/>
+                                    <path d="M9 21V9"/>
+                                </svg>
+                            </div>
+                            <span>Сельское хозяйство</span>
+                        </div>
+                        <div class="application-item">
+                            <div class="application-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8"/>
+                                    <path d="m7.5 4.21 4.5 2.6 4.5-2.6"/>
+                                    <path d="M12 12v9"/>
+                                </svg>
+                            </div>
+                            <span>Высокоточная навигация</span>
+                        </div>
+                        <div class="application-item">
+                            <div class="application-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9,22 9,12 15,12 15,22"/>
+                                </svg>
+                            </div>
+                            <span>Строительство</span>
+                        </div>
+                        <div class="application-item">
+                            <div class="application-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>
+                                    <path d="M2 12h20"/>
+                                </svg>
+                            </div>
+                            <span>Земельный кадастр</span>
+                        </div>
+                        <div class="application-item">
+                            <div class="application-item__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22,4 12,14.01 9,11.01"/>
+                                </svg>
+                            </div>
+                            <span>Кадет навигация</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <h2 class="section__title section__title--light">Преимущества</h2>
+            <div class="advantages__grid">
+                <div class="advantage-card">
+                    <span class="advantage-card__number">1</span>
+                    <h3 class="advantage-card__title">Надежность</h3>
+                    <p class="advantage-card__text">Высококачественные комплектующие обеспечивают бесперебойную работу в экстремальных условиях эксплуатации</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-card__number">2</span>
+                    <h3 class="advantage-card__title">Передача данных</h3>
+                    <p class="advantage-card__text">Скорость передачи данных до 19 200 бит/сек для GNSS и RTK методов высокоточной геодезии</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-card__number">3</span>
+                    <h3 class="advantage-card__title">Гарантия</h3>
+                    <p class="advantage-card__text">Официальная гарантия производителя и сервисное обслуживание в авторизованных центрах</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-card__number">4</span>
+                    <h3 class="advantage-card__title">Рабочий диапазон</h3>
+                    <p class="advantage-card__text">Оборудование работает в диапазоне частот 430-450 MHz с высокой стабильностью сигнала</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-card__number">5</span>
+                    <h3 class="advantage-card__title">Мощная батарея</h3>
+                    <p class="advantage-card__text">Встроенный аккумулятор с ёмкостью 4 100 mAh обеспечивает длительную автономную работу</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-card__number">6</span>
+                    <h3 class="advantage-card__title">Совместимость</h3>
+                    <p class="advantage-card__text">Полная совместимость с оборудованием TDL 450, Trimble, SNB и Radiomodeling</p>
+                </div>
             </div>
         </div>
     </section>
@@ -48,267 +223,173 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section__title">О нас</h2>
-            <div class="about__content">
-                <p class="about__text">
-                    Мы предлагаем комплексные геодезические услуги для различных этапов строительства и проектирования.
-                    Наша команда профессионалов использует современное оборудование и технологии, чтобы обеспечить высокую
-                    точность и надёжность всех измерений.
-                </p>
-                <p class="about__text">
-                    С нами вы получите качественное выполнение работ в установленные сроки и полное соответствие
-                    требованиям нормативной документации.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section__title section__title--white">Мы выполняем</h2>
-            <div class="services__grid">
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <circle cx="30" cy="30" r="28" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M30 15 L30 45 M15 30 L45 30" stroke="#fcb040" stroke-width="2"/>
+            <h2 class="section__title section__title--light">Почему мы</h2>
+            <div class="about__inner">
+                <div class="about__image">
+                    <div class="about__image-placeholder">
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="100" y="50" width="200" height="200" rx="10" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="200" cy="120" r="40" stroke="#f5a623" stroke-width="2"/>
+                            <rect x="160" y="180" width="80" height="50" stroke="#f5a623" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3 class="service-card__title">Геодезические работы для строительства и проектирования</h3>
-                    <p class="service-card__text">
-                        Топографические съёмки, вынос точек в натуру, исполнительная документация
-                    </p>
-                    <button class="btn btn--secondary">Подробнее</button>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <rect x="15" y="20" width="30" height="25" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M20 15 L30 10 L40 15" stroke="#fcb040" stroke-width="2"/>
-                        </svg>
+                <div class="about__content">
+                    <div class="about__cards">
+                        <div class="about-card">
+                            <h3 class="about-card__title">Индивидуальный подход к каждому клиенту</h3>
+                            <p class="about-card__text">Мы внимательно изучаем потребности каждого клиента, подбирая оптимальное оборудование под конкретные задачи</p>
+                        </div>
+                        <div class="about-card">
+                            <h3 class="about-card__title">Настройка и обучение</h3>
+                            <p class="about-card__text">Все оборудование проходит предпродажную настройку. Наши специалисты проведут обучение по работе с техникой</p>
+                        </div>
+                        <div class="about-card">
+                            <h3 class="about-card__title">Сертификат соответствия</h3>
+                            <p class="about-card__text">Вся продукция сертифицирована и имеет официальную гарантию производителя</p>
+                        </div>
+                        <div class="about-card">
+                            <h3 class="about-card__title">Что входит в комплект поставки</h3>
+                            <p class="about-card__text">Радиомодем, антенна, кабели подключения, блок питания, документация и сертификаты</p>
+                        </div>
                     </div>
-                    <h3 class="service-card__title">Геодезические работы при строительстве зданий</h3>
-                    <p class="service-card__text">
-                        Разбивочные работы, контроль геометрии, наблюдение за деформациями
-                    </p>
-                    <button class="btn btn--secondary">Подробнее</button>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <circle cx="30" cy="30" r="20" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M30 20 L30 30 L38 30" stroke="#fcb040" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Геодезические работы при эксплуатации</h3>
-                    <p class="service-card__text">
-                        Мониторинг состояния объектов, наблюдение за осадками и деформациями
-                    </p>
-                    <button class="btn btn--secondary">Подробнее</button>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <rect x="18" y="15" width="24" height="30" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M22 20 L38 20 M22 25 L38 25 M22 30 L38 30" stroke="#fcb040" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Кадастровые работы</h3>
-                    <p class="service-card__text">
-                        Межевание, вынос границ участка, подготовка документации для регистрации
-                    </p>
-                    <button class="btn btn--secondary">Подробнее</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process" id="process">
+    <!-- Product Section -->
+    <section class="product">
         <div class="container">
-            <h2 class="section__title">Как мы работаем</h2>
-            <div class="process__grid">
-                <div class="process-step">
-                    <div class="process-step__number">01</div>
-                    <div class="process-step__icon">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                            <path d="M10 40 L25 10 L40 40 Z" stroke="#fcb040" stroke-width="2"/>
+            <div class="product__inner">
+                <div class="product__image">
+                    <div class="product__image-placeholder">
+                        <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="75" y="50" width="150" height="300" rx="10" stroke="#f5a623" stroke-width="2"/>
+                            <rect x="100" y="80" width="100" height="60" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="150" cy="200" r="30" stroke="#f5a623" stroke-width="2"/>
+                            <text x="150" y="320" text-anchor="middle" fill="#f5a623" font-size="12">Trimble</text>
                         </svg>
                     </div>
-                    <h3 class="process-step__title">Сбор данных</h3>
-                    <p class="process-step__text">
-                        Изучение документации, анализ требований, подготовка технического задания
-                    </p>
                 </div>
-
-                <div class="process-step">
-                    <div class="process-step__number">02</div>
-                    <div class="process-step__icon">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                            <circle cx="25" cy="25" r="15" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M25 15 L25 35" stroke="#fcb040" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="process-step__title">Полевые работы</h3>
-                    <p class="process-step__text">
-                        Выполнение измерений на объекте с использованием современного оборудования
+                <div class="product__content">
+                    <h2 class="product__title">Trimble TDL 450L</h2>
+                    <p class="product__text">
+                        Внешний радиомодем Trimble TDL 450L — 0.5 — 2 Вт. Модем для GNSS станций
+                        диапазона 430-470 МГц. Применяется в геодезии, строительстве, сельском хозяйстве
+                        и других отраслях требующих высокоточного позиционирования.
                     </p>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-step__number">03</div>
-                    <div class="process-step__icon">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                            <rect x="15" y="15" width="20" height="20" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M20 25 L25 30 L35 20" stroke="#fcb040" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="process-step__title">Контроль строительства</h3>
-                    <p class="process-step__text">
-                        Проверка соответствия выполненных работ проектной документации
+                    <p class="product__text">
+                        Модем обладает компактными размерами при высокой мощности передающего тракта.
+                        Применяются высококачественные электронные компоненты и современные технологии.
                     </p>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-step__number">04</div>
-                    <div class="process-step__icon">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                            <rect x="12" y="12" width="26" height="26" stroke="#fcb040" stroke-width="2"/>
-                            <path d="M17 20 L33 20 M17 25 L33 25 M17 30 L25 30" stroke="#fcb040" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="process-step__title">Подготовка отчётов</h3>
-                    <p class="process-step__text">
-                        Оформление технической документации и передача результатов заказчику
-                    </p>
+                    <a href="#contact" class="btn btn--primary">Заказать</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Price Section -->
-    <section class="price" id="price">
+    <!-- Kit Section -->
+    <section class="kit">
         <div class="container">
-            <h2 class="section__title">Прайс-лист</h2>
-            <div class="price__table">
-                <div class="price__row price__row--header">
-                    <div class="price__col">Услуга</div>
-                    <div class="price__col">Стоимость</div>
+            <h2 class="section__title">Комплект</h2>
+            <div class="kit__inner">
+                <div class="kit__content">
+                    <p class="kit__text">
+                        Комплект поставки радиомодема TDL450L включает все необходимое для немедленного
+                        начала работы: сам радиомодем, антенну с кабелем подключения, блок питания
+                        с адаптером для различных типов розеток.
+                    </p>
+                    <p class="kit__text">
+                        Поставка осуществляется в фирменном кейсе для хранения и транспортировки.
+                        В комплект также входит полная документация на русском языке.
+                    </p>
+                    <a href="#contact" class="btn btn--secondary">Узнать цену</a>
                 </div>
-                <div class="price__row">
-                    <div class="price__col">Топографическая съёмка (за 1 га)</div>
-                    <div class="price__col">от 5 000 ₽</div>
-                </div>
-                <div class="price__row">
-                    <div class="price__col">Вынос границ земельного участка</div>
-                    <div class="price__col">от 8 000 ₽</div>
-                </div>
-                <div class="price__row">
-                    <div class="price__col">Исполнительная съёмка</div>
-                    <div class="price__col">от 3 000 ₽</div>
-                </div>
-                <div class="price__row">
-                    <div class="price__col">Межевание земельного участка</div>
-                    <div class="price__col">от 10 000 ₽</div>
-                </div>
-                <div class="price__row">
-                    <div class="price__col">Разбивка осей здания</div>
-                    <div class="price__col">от 15 000 ₽</div>
-                </div>
-                <div class="price__row">
-                    <div class="price__col">Наблюдение за осадками и деформациями</div>
-                    <div class="price__col">от 20 000 ₽</div>
+                <div class="kit__image">
+                    <div class="kit__image-placeholder">
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="50" width="300" height="200" rx="10" stroke="#1a1a2e" stroke-width="2"/>
+                            <rect x="80" y="80" width="80" height="140" rx="5" stroke="#1a1a2e" stroke-width="2"/>
+                            <circle cx="200" cy="150" r="40" stroke="#1a1a2e" stroke-width="2"/>
+                            <rect x="270" y="100" width="60" height="100" rx="5" stroke="#1a1a2e" stroke-width="2"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <p class="price__note">* Точная стоимость определяется после ознакомления с объектом</p>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section class="delivery">
+        <div class="container">
+            <h2 class="section__title section__title--light">Доставка и оплата</h2>
+            <div class="delivery__inner">
+                <div class="delivery__content">
+                    <div class="delivery__item">
+                        <h3 class="delivery__title">Доставка</h3>
+                        <p class="delivery__text">
+                            Осуществляем доставку транспортными компаниями по всей территории России.
+                            Срок доставки зависит от региона и составляет от 1 до 14 дней.
+                        </p>
+                    </div>
+                    <div class="delivery__item">
+                        <h3 class="delivery__title">Оплата</h3>
+                        <p class="delivery__text">
+                            Принимаем оплату по безналичному расчёту для юридических лиц.
+                            Для физических лиц доступна оплата картой или наличными при получении.
+                        </p>
+                    </div>
+                </div>
+                <div class="delivery__image">
+                    <div class="delivery__image-placeholder">
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="100" width="250" height="120" rx="5" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="120" cy="220" r="20" stroke="#f5a623" stroke-width="2"/>
+                            <circle cx="230" cy="220" r="20" stroke="#f5a623" stroke-width="2"/>
+                            <rect x="300" y="130" width="80" height="60" stroke="#f5a623" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section__title section__title--white">Свяжитесь с нами</h2>
-            <div class="contact__content">
-                <form class="contact__form" id="contactForm">
-                    <div class="form__group">
-                        <input type="text" class="form__input" placeholder="Ваше имя" required>
-                    </div>
-                    <div class="form__group">
-                        <input type="tel" class="form__input" placeholder="Телефон" required>
-                    </div>
-                    <div class="form__group">
-                        <input type="email" class="form__input" placeholder="Email" required>
-                    </div>
-                    <div class="form__group">
-                        <textarea class="form__textarea" placeholder="Сообщение" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--large">Отправить</button>
-                </form>
+            <div class="contact__inner">
                 <div class="contact__info">
-                    <div class="contact__item">
-                        <h3 class="contact__title">Телефон</h3>
-                        <p class="contact__text">+7 (XXX) XXX-XX-XX</p>
-                    </div>
-                    <div class="contact__item">
-                        <h3 class="contact__title">Email</h3>
-                        <p class="contact__text">info@geodesy.ru</p>
-                    </div>
-                    <div class="contact__item">
-                        <h3 class="contact__title">Адрес</h3>
-                        <p class="contact__text">г. Москва, ул. Примерная, д. 1</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="reviews">
-        <div class="container">
-            <h2 class="section__title">Отзывы клиентов</h2>
-            <div class="reviews__slider" id="reviewsSlider">
-                <div class="review">
-                    <div class="review__content">
-                        <p class="review__text">
-                            "Отличная работа! Все сделано качественно и в срок. Рекомендую эту компанию для геодезических работ."
-                        </p>
-                        <div class="review__author">
-                            <p class="review__name">Иван Петров</p>
-                            <p class="review__position">ООО "СтройПроект"</p>
+                    <h2 class="section__title section__title--light section__title--left">Контакты</h2>
+                    <div class="contact__details">
+                        <div class="contact__item">
+                            <span class="contact__label">Телефон</span>
+                            <a href="tel:+74951234567" class="contact__value">+7 (495) 123-45-67</a>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__label">Email</span>
+                            <a href="mailto:info@hexagon.ru" class="contact__value">info@hexagon.ru</a>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__label">Адрес</span>
+                            <span class="contact__value">г. Москва, ул. Примерная, д. 1</span>
                         </div>
                     </div>
                 </div>
-                <div class="review">
-                    <div class="review__content">
-                        <p class="review__text">
-                            "Профессиональный подход, современное оборудование. Результатами очень довольны."
-                        </p>
-                        <div class="review__author">
-                            <p class="review__name">Мария Сидорова</p>
-                            <p class="review__position">Частный заказчик</p>
+                <div class="contact__form-wrapper">
+                    <form class="contact__form" id="contactForm">
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Ваше имя" required>
                         </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="review__content">
-                        <p class="review__text">
-                            "Сотрудничаем уже несколько лет. Всегда высокое качество работ и адекватные цены."
-                        </p>
-                        <div class="review__author">
-                            <p class="review__name">Алексей Смирнов</p>
-                            <p class="review__position">ЗАО "МонолитСтрой"</p>
+                        <div class="form__group">
+                            <input type="tel" class="form__input" placeholder="Телефон" required>
                         </div>
-                    </div>
+                        <div class="form__group">
+                            <textarea class="form__textarea" placeholder="Оставьте вопрос" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">Отправить</button>
+                    </form>
                 </div>
-            </div>
-            <div class="reviews__controls">
-                <button class="reviews__btn reviews__btn--prev" id="prevReview">&larr;</button>
-                <div class="reviews__dots" id="reviewsDots"></div>
-                <button class="reviews__btn reviews__btn--next" id="nextReview">&rarr;</button>
             </div>
         </div>
     </section>
@@ -316,12 +397,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__content">
-                <p class="footer__text">&copy; 2026 Геодезические услуги. Все права защищены.</p>
-                <div class="footer__links">
-                    <a href="#" class="footer__link">Политика конфиденциальности</a>
-                    <a href="#" class="footer__link">Условия использования</a>
-                </div>
+            <div class="footer__inner">
+                <p class="footer__copy">&copy; Copyright 2026 OOO "Hexagon" - магазин геодезического оборудования</p>
+                <a href="#" class="footer__link">Наверх ↑</a>
             </div>
         </div>
     </footer>

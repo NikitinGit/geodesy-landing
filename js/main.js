@@ -1,280 +1,306 @@
-// Mobile Menu Toggle
+/**
+ * Geodesy Landing Page - Main JavaScript
+ * Dark theme with smooth animations
+ */
+
+// ========================================
+// Mobile Navigation
+// ========================================
 const burger = document.getElementById('burger');
-const nav = document.querySelector('.nav');
+const nav = document.getElementById('nav');
 
-burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    nav.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav__link').forEach(link => {
-    link.addEventListener('click', () => {
-        burger.classList.remove('active');
-        nav.classList.remove('active');
+if (burger && nav) {
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
     });
-});
 
-// Smooth scrolling for navigation links
+    // Close menu on link click
+    document.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('active');
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('active')) {
+            burger.classList.remove('active');
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// ========================================
+// Smooth Scroll
+// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const headerHeight = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
             window.scrollTo({
-                top: offsetPosition,
+                top: targetPosition,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Reviews Slider
-class ReviewsSlider {
-    constructor() {
-        this.slider = document.getElementById('reviewsSlider');
-        this.reviews = this.slider.querySelectorAll('.review');
-        this.currentIndex = 0;
-        this.dotsContainer = document.getElementById('reviewsDots');
+// ========================================
+// Header Background on Scroll
+// ========================================
+const header = document.querySelector('.header');
 
-        this.init();
-    }
-
-    init() {
-        // Show first review
-        this.showReview(0);
-
-        // Create dots
-        this.createDots();
-
-        // Add button listeners
-        document.getElementById('prevReview').addEventListener('click', () => this.prevReview());
-        document.getElementById('nextReview').addEventListener('click', () => this.nextReview());
-
-        // Auto-play
-        this.startAutoPlay();
-    }
-
-    createDots() {
-        this.reviews.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('review-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => this.showReview(index));
-            this.dotsContainer.appendChild(dot);
-        });
-        this.dots = this.dotsContainer.querySelectorAll('.review-dot');
-    }
-
-    showReview(index) {
-        // Hide all reviews
-        this.reviews.forEach(review => review.classList.remove('active'));
-        this.dots.forEach(dot => dot.classList.remove('active'));
-
-        // Show current review
-        this.reviews[index].classList.add('active');
-        this.dots[index].classList.add('active');
-        this.currentIndex = index;
-    }
-
-    nextReview() {
-        const nextIndex = (this.currentIndex + 1) % this.reviews.length;
-        this.showReview(nextIndex);
-    }
-
-    prevReview() {
-        const prevIndex = (this.currentIndex - 1 + this.reviews.length) % this.reviews.length;
-        this.showReview(prevIndex);
-    }
-
-    startAutoPlay() {
-        setInterval(() => this.nextReview(), 5000);
-    }
+if (header) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(26, 26, 46, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = '#1a1a2e';
+            header.style.backdropFilter = 'none';
+        }
+    });
 }
 
-// Initialize slider when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new ReviewsSlider();
-});
+// ========================================
+// Active Navigation Link
+// ========================================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav__link');
 
-// Contact Form Handler
-const contactForm = document.getElementById('contactForm');
+function updateActiveNav() {
+    const scrollPos = window.scrollY + 100;
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
 
-    const formData = new FormData(contactForm);
-    const data = {
-        name: formData.get('name') || contactForm.querySelector('input[type="text"]').value,
-        phone: formData.get('phone') || contactForm.querySelector('input[type="tel"]').value,
-        email: formData.get('email') || contactForm.querySelector('input[type="email"]').value,
-        message: formData.get('message') || contactForm.querySelector('textarea').value
-    };
-
-    // Here you would send the data to your server
-    console.log('Form data:', data);
-
-    // Show success message
-    alert('Спасибо за обращение! Мы свяжемся с вами в ближайшее время.');
-
-    // Reset form
-    contactForm.reset();
-
-    // Example: Send to server (uncomment and modify for your needs)
-    /*
-    try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            alert('Спасибо за обращение! Мы свяжемся с вами в ближайшее время.');
-            contactForm.reset();
-        } else {
-            alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.style.color = '#f5a623';
+                } else {
+                    link.style.color = '';
+                }
+            });
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
-    }
-    */
-});
+    });
+}
 
-// Scroll animations
+window.addEventListener('scroll', updateActiveNav);
+
+// ========================================
+// Scroll Animations
+// ========================================
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe sections for animation
+// Apply to animated elements
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.service-card, .process-step, .review');
-    sections.forEach(section => {
-        observer.observe(section);
+    const animatedElements = document.querySelectorAll(
+        '.feature-card, .advantage-card, .about-card, .application-item'
+    );
+
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(el);
     });
 });
 
-// Button actions
-const buttons = document.querySelectorAll('.btn--secondary');
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Scroll to contact form
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            const headerOffset = 80;
-            const elementPosition = contactSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+// ========================================
+// Contact Form
+// ========================================
+const contactForm = document.getElementById('contactForm');
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        // Get form data
+        const formData = {
+            name: contactForm.querySelector('input[type="text"]').value,
+            phone: contactForm.querySelector('input[type="tel"]').value,
+            message: contactForm.querySelector('textarea').value
+        };
+
+        // Validate
+        if (!formData.name || !formData.phone) {
+            showNotification('Пожалуйста, заполните обязательные поля', 'error');
+            return;
+        }
+
+        // Submit animation
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        // Simulate sending (replace with actual API call)
+        try {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            showNotification('Спасибо! Мы свяжемся с вами в ближайшее время.', 'success');
+            contactForm.reset();
+        } catch (error) {
+            showNotification('Произошла ошибка. Попробуйте позже.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
         }
     });
+
+    // Phone formatting
+    const phoneInput = contactForm.querySelector('input[type="tel"]');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+
+            if (value.length > 0) {
+                if (value[0] === '8' || value[0] === '7') {
+                    value = '7' + value.slice(1);
+                }
+
+                let formatted = '+7';
+                if (value.length > 1) formatted += ' (' + value.slice(1, 4);
+                if (value.length >= 5) formatted += ') ' + value.slice(4, 7);
+                if (value.length >= 8) formatted += '-' + value.slice(7, 9);
+                if (value.length >= 10) formatted += '-' + value.slice(9, 11);
+
+                e.target.value = formatted;
+            }
+        });
+    }
+}
+
+// ========================================
+// Notification System
+// ========================================
+function showNotification(message, type = 'success') {
+    // Remove existing notification
+    const existing = document.querySelector('.notification');
+    if (existing) existing.remove();
+
+    // Create notification
+    const notification = document.createElement('div');
+    notification.className = `notification notification--${type}`;
+    notification.innerHTML = `
+        <span>${message}</span>
+        <button class="notification__close">&times;</button>
+    `;
+
+    // Styles
+    Object.assign(notification.style, {
+        position: 'fixed',
+        bottom: '24px',
+        right: '24px',
+        padding: '16px 24px',
+        background: type === 'success' ? '#1a1a2e' : '#ff4444',
+        color: '#fff',
+        borderRadius: '8px',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '16px',
+        zIndex: '9999',
+        animation: 'slideIn 0.3s ease',
+        borderLeft: `4px solid ${type === 'success' ? '#f5a623' : '#ff6666'}`
+    });
+
+    // Add animation keyframes
+    if (!document.querySelector('#notification-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'notification-styles';
+        styles.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            .notification__close {
+                background: none;
+                border: none;
+                color: #fff;
+                font-size: 24px;
+                cursor: pointer;
+                padding: 0;
+                line-height: 1;
+            }
+        `;
+        document.head.appendChild(styles);
+    }
+
+    document.body.appendChild(notification);
+
+    // Close button
+    notification.querySelector('.notification__close').addEventListener('click', () => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    });
+
+    // Auto close
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
+
+// ========================================
+// Scroll to Top (Footer Link)
+// ========================================
+document.querySelector('.footer__link')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
-// Primary button in hero
-const heroButton = document.querySelector('.hero .btn--primary');
-if (heroButton) {
-    heroButton.addEventListener('click', () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            const headerOffset = 80;
-            const elementPosition = contactSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+// ========================================
+// Parallax Effect on Hero
+// ========================================
+const heroImage = document.querySelector('.hero__image-placeholder');
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+if (heroImage) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        if (scrolled < window.innerHeight) {
+            heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
         }
     });
 }
 
-// Add active state to navigation on scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav__link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav__link').forEach(link => {
-                link.classList.remove('active');
-            });
-            if (navLink) {
-                navLink.classList.add('active');
-            }
-        }
-    });
-});
-
-// Form validation
-const formInputs = document.querySelectorAll('.form__input, .form__textarea');
-
-formInputs.forEach(input => {
-    input.addEventListener('blur', () => {
-        if (input.value.trim() === '' && input.hasAttribute('required')) {
-            input.style.borderColor = '#ff4444';
-        } else {
-            input.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-        }
-    });
-
-    input.addEventListener('focus', () => {
-        input.style.borderColor = '#fcb040';
-    });
-});
-
-// Phone number formatting
-const phoneInput = contactForm.querySelector('input[type="tel"]');
-if (phoneInput) {
-    phoneInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, '');
-
-        if (value.length > 0) {
-            if (value[0] === '8' || value[0] === '7') {
-                value = '7' + value.slice(1);
-            }
-
-            let formatted = '+7';
-            if (value.length > 1) {
-                formatted += ' (' + value.slice(1, 4);
-            }
-            if (value.length >= 5) {
-                formatted += ') ' + value.slice(4, 7);
-            }
-            if (value.length >= 8) {
-                formatted += '-' + value.slice(7, 9);
-            }
-            if (value.length >= 10) {
-                formatted += '-' + value.slice(9, 11);
-            }
-
-            e.target.value = formatted;
-        }
-    });
-}
-
-console.log('Geodesy Landing Page loaded successfully!');
+// ========================================
+// Initialize
+// ========================================
+console.log('Geodesy Landing Page initialized');
