@@ -1,0 +1,29 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+contact-logs.txt
+
+# Dependencies (if you add npm later)
+node_modules/
+package-lock.json
+
+# Build files (if you minify)
+*.min.css.map
+*.min.js.map
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.local
