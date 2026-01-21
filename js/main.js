@@ -120,15 +120,35 @@ const observer = new IntersectionObserver((entries) => {
 
 // Apply to animated elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll(
-        '.feature-card, .advantage-card, .about-card, .application-item'
-    );
+    // Определяем задержку в зависимости от размера экрана
+    const isMobile = window.innerWidth < 768;
+    const baseDelay = isMobile ? 0.03 : 0.05; // Меньше задержка на мобильных
+    const animationDuration = isMobile ? 0.4 : 0.6; // Быстрее анимация на мобильных
 
-    animatedElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(el);
+    // Анимируем каждую секцию отдельно (сброс счётчика для каждой секции)
+    const sections = [
+        { selector: '.feature-card', container: '.features' },
+        { selector: '.advantage-card', container: '.advantages' },
+        { selector: '.about-card', container: '.about' },
+        { selector: '.application-item', container: '.applications' }
+    ];
+
+    sections.forEach(({ selector, container }) => {
+        const containerEl = document.querySelector(container);
+        if (!containerEl) return;
+
+        const elements = containerEl.querySelectorAll(selector);
+
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+
+            // Задержка рассчитывается только внутри секции
+            const delay = index * baseDelay;
+            el.style.transition = `opacity ${animationDuration}s ease ${delay}s, transform ${animationDuration}s ease ${delay}s`;
+
+            observer.observe(el);
+        });
     });
 });
 
