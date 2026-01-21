@@ -143,17 +143,14 @@ if (contactForm) {
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
+        const phoneInput = document.getElementById('phoneInput');
 
         // Get form data
-        const formData = {
-            name: contactForm.querySelector('input[type="text"]').value,
-            phone: contactForm.querySelector('input[type="tel"]').value,
-            message: contactForm.querySelector('textarea').value
-        };
+        const phone = phoneInput.value.trim();
 
         // Validate
-        if (!formData.name || !formData.phone) {
-            showNotification('Пожалуйста, заполните обязательные поля', 'error');
+        if (!phone || phone.length < 10) {
+            showNotification('Пожалуйста, введите корректный номер телефона', 'error');
             return;
         }
 
@@ -161,8 +158,15 @@ if (contactForm) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Отправка...';
 
-        // Simulate sending (replace with actual API call)
+        // Simulate sending (replace with actual API call to send-email.php)
         try {
+            // Uncomment for real sending:
+            // const response = await fetch('send-email.php', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            //     body: `phone=${encodeURIComponent(phone)}`
+            // });
+
             await new Promise(resolve => setTimeout(resolve, 1500));
 
             showNotification('Спасибо! Мы свяжемся с вами в ближайшее время.', 'success');
@@ -176,7 +180,7 @@ if (contactForm) {
     });
 
     // Phone formatting
-    const phoneInput = contactForm.querySelector('input[type="tel"]');
+    const phoneInput = document.getElementById('phoneInput');
     if (phoneInput) {
         phoneInput.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '');

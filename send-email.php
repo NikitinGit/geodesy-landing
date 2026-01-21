@@ -24,24 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Получаем данные из формы
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
 $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
-$email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 // Валидация
 $errors = [];
-
-if (empty($name)) {
-    $errors[] = 'Имя обязательно для заполнения';
-}
 
 if (empty($phone)) {
     $errors[] = 'Телефон обязателен для заполнения';
 }
 
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'Некорректный email адрес';
+if (strlen($phone) < 10) {
+    $errors[] = 'Некорректный номер телефона';
 }
 
 if (!empty($errors)) {
@@ -51,10 +44,7 @@ if (!empty($errors)) {
 }
 
 // Защита от XSS
-$name = htmlspecialchars($name);
 $phone = htmlspecialchars($phone);
-$email = htmlspecialchars($email);
-$message = htmlspecialchars($message);
 
 // Формируем письмо
 $subject = "Новая заявка с сайта Геодезия";
@@ -62,17 +52,13 @@ $subject = "Новая заявка с сайта Геодезия";
 $email_body = "
 Новая заявка с сайта!
 
-Имя: $name
 Телефон: $phone
-Email: $email
-Сообщение: $message
 
 ---
 Отправлено: " . date('d.m.Y H:i:s');
 
 // Заголовки письма
 $headers = "From: noreply@yourdomain.ru\r\n";
-$headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // Отправка письма
@@ -87,7 +73,7 @@ if ($mail_sent) {
 
     // Логирование (опционально)
     $log_file = 'contact-logs.txt';
-    $log_entry = date('[Y-m-d H:i:s]') . " - Заявка от $name ($email)\n";
+    $log_entry = date('[Y-m-d H:i:s]') . " - Заявка с номером $phone\n";
     file_put_contents($log_file, $log_entry, FILE_APPEND);
 
 } else {
