@@ -633,6 +633,120 @@ a {
 }
 
 /* ========================================
+   Portfolio Section (Light)
+   ======================================== */
+.portfolio {
+    background: var(--bg-light);
+    padding: 100px 0;
+}
+
+.portfolio__slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.portfolio__track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.portfolio__item {
+    min-width: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 40px 30px 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.portfolio__item:hover .portfolio__overlay {
+    opacity: 1;
+}
+
+.portfolio__title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.portfolio__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(26, 26, 46, 0.8);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.portfolio__arrow:hover {
+    background: var(--accent);
+    color: var(--text-dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.portfolio__arrow--prev {
+    left: 20px;
+}
+
+.portfolio__arrow--next {
+    right: 20px;
+}
+
+.portfolio__dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.portfolio__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.portfolio__dot.active {
+    background: var(--accent);
+    transform: scale(1.3);
+}
+
+/* ========================================
    Contact Section (Dark)
    ======================================== */
 .contact {
@@ -855,6 +969,24 @@ a.contact__value:hover {
 
     .product__title {
         font-size: 32px;
+    }
+
+    /* Portfolio */
+    .portfolio__arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .portfolio__arrow--prev {
+        left: 10px;
+    }
+
+    .portfolio__arrow--next {
+        right: 10px;
+    }
+
+    .portfolio__title {
+        font-size: 16px;
     }
 
     /* Footer */

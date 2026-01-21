@@ -305,6 +305,96 @@ if (heroImage) {
 }
 
 // ========================================
+// Portfolio Slider
+// ========================================
+const portfolioTrack = document.getElementById('portfolioTrack');
+const portfolioPrev = document.getElementById('portfolioPrev');
+const portfolioNext = document.getElementById('portfolioNext');
+const portfolioDots = document.getElementById('portfolioDots');
+
+if (portfolioTrack && portfolioPrev && portfolioNext) {
+    const items = portfolioTrack.querySelectorAll('.portfolio__item');
+    let currentIndex = 0;
+
+    // Create dots
+    items.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('portfolio__dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        portfolioDots.appendChild(dot);
+    });
+
+    const dots = portfolioDots.querySelectorAll('.portfolio__dot');
+
+    function updateSlider() {
+        portfolioTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateSlider();
+    }
+
+    portfolioNext.addEventListener('click', nextSlide);
+    portfolioPrev.addEventListener('click', prevSlide);
+
+    // Auto play
+    let autoplayInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover
+    portfolioTrack.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+    });
+
+    portfolioTrack.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    portfolioTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    portfolioTrack.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            nextSlide();
+        }
+        if (touchEndX > touchStartX + 50) {
+            prevSlide();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+}
+
+// ========================================
 // Initialize
 // ========================================
 console.log('Geodesy Landing Page initialized');

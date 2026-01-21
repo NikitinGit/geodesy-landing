@@ -23,6 +23,7 @@
                         <li><a href="#features" class="nav__link">Характеристики</a></li>
                         <li><a href="#advantages" class="nav__link">Преимущества</a></li>
                         <li><a href="#about" class="nav__link">О нас</a></li>
+                        <li><a href="#portfolio" class="nav__link">Наши работы</a></li>
                         <li><a href="#contact" class="nav__link">Контакты</a></li>
                     </ul>
                 </nav>
@@ -354,6 +355,67 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section__title">Наши работы</h2>
+            <div class="portfolio__slider">
+                <button class="portfolio__arrow portfolio__arrow--prev" id="portfolioPrev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="portfolio__track" id="portfolioTrack">
+                    <div class="portfolio__item">
+                        <img src="images/portfolio/podkran.jpg" alt="Контрольные измерения подкрановых путей" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <h3 class="portfolio__title">Контрольные измерения подкрановых путей</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio__item">
+                        <img src="images/portfolio/osadki.jpg" alt="Наблюдения за осадками и деформациями зданий" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <h3 class="portfolio__title">Наблюдения за осадками</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio__item">
+                        <img src="images/portfolio/razbivka.jpg" alt="Разбивочные работы" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <h3 class="portfolio__title">Разбивочные работы</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio__item">
+                        <img src="images/portfolio/vynos-zu.jpg" alt="Вынос земельного участка" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <h3 class="portfolio__title">Вынос земельного участка</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio__item">
+                        <img src="images/portfolio/podkran-2.jpg" alt="Контрольные измерения" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <h3 class="portfolio__title">Контрольные измерения</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio__item">
+                        <img src="images/portfolio/podkran-3.jpg" alt="Измерения на объекте" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <h3 class="portfolio__title">Измерения на объекте</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="portfolio__arrow portfolio__arrow--next" id="portfolioNext">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="portfolio__dots" id="portfolioDots"></div>
         </div>
     </section>
 
