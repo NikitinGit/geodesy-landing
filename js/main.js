@@ -120,10 +120,18 @@ const observer = new IntersectionObserver((entries) => {
 
 // Apply to animated elements
 document.addEventListener('DOMContentLoaded', () => {
-    // Определяем задержку в зависимости от размера экрана
+    // Определяем размер экрана
     const isMobile = window.innerWidth < 768;
-    const baseDelay = isMobile ? 0.03 : 0.05; // Меньше задержка на мобильных
-    const animationDuration = isMobile ? 0.4 : 0.6; // Быстрее анимация на мобильных
+
+    // На мобилке убираем анимации полностью
+    if (isMobile) {
+        console.log('Mobile detected - animations disabled for performance');
+        return; // Просто выходим, элементы остаются видимыми
+    }
+
+    // На десктопе - быстрые анимации
+    const baseDelay = 0.03; // Быстрая задержка между элементами
+    const animationDuration = 0.3; // Короткая анимация
 
     // Анимируем каждую секцию отдельно (сброс счётчика для каждой секции)
     const sections = [
@@ -141,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         elements.forEach((el, index) => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
+            el.style.transform = 'translateY(20px)'; // Меньше сдвиг
 
             // Задержка рассчитывается только внутри секции
             const delay = index * baseDelay;
