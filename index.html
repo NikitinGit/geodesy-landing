@@ -370,67 +370,79 @@
         <div class="container">
             <h2 class="section__title section__title--light">О компании</h2>
             <div class="about__inner">
-                <div class="about__image">
-                    <div class="about__image-placeholder">
-                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="100" y="50" width="200" height="200" rx="10" stroke="#f5a623" stroke-width="2"/>
-                            <circle cx="200" cy="120" r="40" stroke="#f5a623" stroke-width="2"/>
-                            <rect x="160" y="180" width="80" height="50" stroke="#f5a623" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
                 <div class="about__content">
-                    <div class="about__cards">
-                        <div class="about-card">
-                            <h3 class="about-card__title">Комплексный подход</h3>
-                            <p class="about-card__text">Мы выполняем полный цикл работ — от инженерных изысканий до геодезического сопровождения строительства и мониторинга объектов</p>
-                        </div>
-                        <div class="about-card">
-                            <h3 class="about-card__title">Современное оборудование</h3>
-                            <p class="about-card__text">Используем высокоточные геодезические приборы и передовые технологии для обеспечения максимальной точности измерений</p>
-                        </div>
-                        <div class="about-card">
-                            <h3 class="about-card__title">Опытные специалисты</h3>
-                            <p class="about-card__text">Наша команда состоит из квалифицированных инженеров-геодезистов с многолетним опытом работы на объектах различной сложности</p>
-                        </div>
-                        <div class="about-card">
-                            <h3 class="about-card__title">Работа по всей России</h3>
-                            <p class="about-card__text">Выполняем проекты на территории всей Российской Федерации — от небольших участков до крупных инфраструктурных объектов</p>
-                        </div>
+                    <p class="about__text">Инженерные изыскания, геодезические работы, вынос границ участков, создание опорных геодезических сетей и сопровождение строительства — полный спектр услуг для вашего объекта.</p>
+                    <div class="about__experience">
+                        <span class="about__experience-number">10+</span>
+                        <span class="about__experience-text">лет опыта</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Section -->
-    <section class="product">
+    <!-- Pricing Section -->
+    <section class="pricing">
         <div class="container">
-            <div class="product__inner">
-                <div class="product__image">
-                    <div class="product__image-placeholder">
-                        <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="75" y="50" width="150" height="300" rx="10" stroke="#f5a623" stroke-width="2"/>
-                            <rect x="100" y="80" width="100" height="60" stroke="#f5a623" stroke-width="2"/>
-                            <circle cx="150" cy="200" r="30" stroke="#f5a623" stroke-width="2"/>
-                            <text x="150" y="320" text-anchor="middle" fill="#f5a623" font-size="12">GeoService</text>
-                        </svg>
+            <h2 class="section__title section__title--light section__title--small-margin">Тарифный план</h2>
+            <h2 class="section__title">Стоимость работ и комплексов услуг</h2>
+            <div class="pricing__grid">
+                <!-- Базовый -->
+                <div class="pricing-card">
+                    <div class="pricing-card__image">
+                        <img src="images/work_price.jpg" alt="Базовый тариф" loading="lazy">
                     </div>
+                    <h3 class="pricing-card__title">Базовый</h3>
+                    <div class="pricing-card__price">от 8 000 ₽</div>
+                    <p class="pricing-card__description">Подходит для первичного анализа участка и разовых работ</p>
+                    <ul class="pricing-card__features">
+                        <li>Инженерные изыскания на участке</li>
+                        <li>Вынос границ земельного участка</li>
+                        <li>Создание и закрепление реперов</li>
+                        <li>Топографическая съёмка до 1 га</li>
+                        <li>Консультация по документации</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--secondary">Заказать</a>
                 </div>
-                <div class="product__content">
-                    <h2 class="product__title">Тарифные планы</h2>
-                    <p class="product__text">
-                        <strong>Базовый</strong> — от 8 000 рублей. Включает первичные изыскания и вынос границ земельных участков. Подходит для небольших проектов и частных заказчиков.
-                    </p>
-                    <p class="product__text">
-                        <strong>Стандарт</strong> — от 15 000 рублей. Геодезическое сопровождение строительства с проверкой геометрических параметров. Оптимален для типовых строительных объектов.
-                    </p>
-                    <p class="product__text">
-                        <strong>Премиум</strong> — от 25 000 рублей. Полный комплекс услуг с выделенным инженером и круглосуточной поддержкой для крупных инфраструктурных проектов.
-                    </p>
-                    <a href="#contact" class="btn btn--primary">Получить консультацию</a>
+
+                <!-- Стандарт -->
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">Популярный</div>
+                    <div class="pricing-card__image">
+                        <img src="images/work_price__1.jpg" alt="Стандарт тариф" loading="lazy">
+                    </div>
+                    <h3 class="pricing-card__title">Стандарт</h3>
+                    <div class="pricing-card__price">от 15 000 ₽</div>
+                    <p class="pricing-card__description">Оптимальный выбор для сопровождения строительства</p>
+                    <ul class="pricing-card__features">
+                        <li>Геодезическое сопровождение строительства</li>
+                        <li>Проверка геометрии объектов</li>
+                        <li>Исполнительные съёмки и схемы</li>
+                        <li>Вынос осей зданий в натуру</li>
+                        <li>Расчёт объёмов строительных работ</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary">Заказать</a>
+                </div>
+
+                <!-- Премиум -->
+                <div class="pricing-card">
+                    <div class="pricing-card__image">
+                        <img src="images/work_price__2.jpg" alt="Премиум тариф" loading="lazy">
+                    </div>
+                    <h3 class="pricing-card__title">Премиум</h3>
+                    <div class="pricing-card__price">от 25 000 ₽</div>
+                    <p class="pricing-card__description">Полный комплекс работ с геомониторингом для крупных проектов</p>
+                    <ul class="pricing-card__features">
+                        <li>Создание/восстановление геодезических сетей</li>
+                        <li>Геомониторинг деформаций конструкций</li>
+                        <li>Комплексные исполнительные съёмки</li>
+                        <li>Проверка соответствия проекту</li>
+                        <li>Выделенный инженер-куратор</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--secondary">Заказать</a>
                 </div>
             </div>
+            <p class="pricing__note">* Индивидуальный расчёт стоимости доступен для сложных задач</p>
         </div>
     </section>
 
