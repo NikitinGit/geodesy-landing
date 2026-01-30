@@ -1310,6 +1310,40 @@ a.contact__value:hover {
         font-size: 13px;
     }
 
+    .special-offer {
+        padding: 50px 0;
+    }
+
+    .special-offer__heading {
+        font-size: 17px;
+    }
+
+    .special-offer__item {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .special-offer__item span {
+        font-size: 13px;
+    }
+
+    .special-offer__promo {
+        padding: 16px;
+    }
+
+    .special-offer__promo-text {
+        font-size: 13px;
+    }
+
+    .special-offer__promo-code {
+        font-size: 18px;
+        padding: 6px 16px;
+    }
+
+    .special-offer__footer {
+        font-size: 14px;
+    }
+
     .features__grid {
         grid-template-columns: 1fr;
     }
