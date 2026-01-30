@@ -179,6 +179,10 @@ a {
     color: var(--text-white);
 }
 
+.section__title--dark {
+    color: var(--text-dark);
+}
+
 .section__title--left {
     text-align: left;
 }
@@ -267,6 +271,84 @@ a {
 @keyframes scroll {
     0%, 100% { opacity: 1; top: 8px; }
     50% { opacity: 0; top: 20px; }
+}
+
+/* ========================================
+   Intro Services Section (Light)
+   ======================================== */
+.intro-services {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.intro-services__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.intro-services__image {
+    width: 100%;
+}
+
+.intro-services__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.intro-services__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-services__text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.intro-services__text strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.intro-services__list {
+    display: grid;
+    gap: 16px;
+}
+
+.intro-services__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.intro-services__item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.intro-services__icon {
+    flex-shrink: 0;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.intro-services__item span {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-dark);
 }
 
 /* ========================================
@@ -941,6 +1023,29 @@ a.contact__value:hover {
         height: 280px;
     }
 
+    /* Intro Services */
+    .intro-services {
+        padding: 60px 0;
+    }
+
+    .intro-services__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .intro-services__text {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .intro-services__item {
+        padding: 16px;
+    }
+
+    .intro-services__item span {
+        font-size: 14px;
+    }
+
     /* Sections */
     .features__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1026,6 +1131,24 @@ a.contact__value:hover {
 
     .hero__title {
         font-size: 28px;
+    }
+
+    .intro-services {
+        padding: 50px 0;
+    }
+
+    .intro-services__text {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .intro-services__item {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .intro-services__item span {
+        font-size: 13px;
     }
 
     .features__grid {
