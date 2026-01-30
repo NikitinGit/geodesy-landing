@@ -389,7 +389,7 @@ a {
 .feature-card__value {
     font-size: 14px;
     line-height: 1.7;
-    color: var(--text-gray);
+    color: #4a4a4a;
     margin-bottom: 0;
 }
 
@@ -520,6 +520,115 @@ a {
     font-size: 14px;
     color: var(--text-gray);
     line-height: 1.7;
+}
+
+/* ========================================
+   Special Offer Section (Light)
+   ======================================== */
+.special-offer {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.special-offer__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.special-offer__image {
+    width: 100%;
+}
+
+.special-offer__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.special-offer__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.special-offer__heading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+.special-offer__list {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.special-offer__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.special-offer__item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.special-offer__icon {
+    flex-shrink: 0;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.special-offer__item span {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.special-offer__promo {
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.1) 0%, rgba(245, 166, 35, 0.05) 100%);
+    border-radius: 8px;
+    border: 2px dashed var(--accent);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.special-offer__promo-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.special-offer__promo-code {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 2px;
+    padding: 8px 24px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-offer__footer {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    font-weight: 500;
 }
 
 /* ========================================
@@ -1062,6 +1171,32 @@ a.contact__value:hover {
 
     .intro-services__item span {
         font-size: 14px;
+    }
+
+    /* Special Offer */
+    .special-offer {
+        padding: 60px 0;
+    }
+
+    .special-offer__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .special-offer__heading {
+        font-size: 18px;
+    }
+
+    .special-offer__item {
+        padding: 12px;
+    }
+
+    .special-offer__item span {
+        font-size: 13px;
+    }
+
+    .special-offer__promo-code {
+        font-size: 20px;
     }
 
     /* Sections */
