@@ -1798,7 +1798,7 @@ a {
 
     .hero__buttons {
         flex-direction: column;
-        gap: 12px;
+        gap: 20px;
     }
 
     .hero__buttons .btn {
