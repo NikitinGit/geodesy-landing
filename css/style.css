@@ -234,6 +234,12 @@ a {
     margin-bottom: 40px;
 }
 
+.hero__buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 .hero__image {
     display: flex;
     justify-content: center;
@@ -1788,6 +1794,16 @@ a {
 
     .hero__title {
         font-size: 28px;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .intro-services {
