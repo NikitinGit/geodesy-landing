@@ -415,6 +415,29 @@ if (portfolioTrack && portfolioPrev && portfolioNext) {
 }
 
 // ========================================
+// FAQ Accordion
+// ========================================
+const faqItems = document.querySelectorAll('.faq__item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq__question');
+
+    question.addEventListener('click', () => {
+        // Close all other items
+        const wasActive = item.classList.contains('active');
+
+        faqItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+        });
+
+        // Toggle current item
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// ========================================
 // Initialize
 // ========================================
 console.log('Geodesy Landing Page initialized');
