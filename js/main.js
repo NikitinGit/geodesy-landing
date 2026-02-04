@@ -438,6 +438,52 @@ faqItems.forEach(item => {
 });
 
 // ========================================
+// Portfolio Modal
+// ========================================
+const portfolioModal = document.getElementById('portfolioModal');
+const portfolioModalClose = document.getElementById('portfolioModalClose');
+const portfolioModalOverlay = portfolioModal?.querySelector('.portfolio-modal__overlay');
+const portfolioModalImage = document.getElementById('portfolioModalImage');
+const portfolioModalTitle = document.getElementById('portfolioModalTitle');
+const portfolioModalDescription = document.getElementById('portfolioModalDescription');
+const portfolioWorkCards = document.querySelectorAll('.portfolio-work-card');
+
+// Open modal
+portfolioWorkCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        const title = card.querySelector('.portfolio-work-card__title');
+        const description = card.querySelector('.portfolio-work-card__description');
+
+        if (portfolioModalImage && portfolioModalTitle && portfolioModalDescription) {
+            portfolioModalImage.src = img.src;
+            portfolioModalImage.alt = img.alt;
+            portfolioModalTitle.textContent = title.textContent;
+            portfolioModalDescription.textContent = description.textContent;
+
+            portfolioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close modal
+function closePortfolioModal() {
+    portfolioModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+portfolioModalClose?.addEventListener('click', closePortfolioModal);
+portfolioModalOverlay?.addEventListener('click', closePortfolioModal);
+
+// Close on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && portfolioModal.classList.contains('active')) {
+        closePortfolioModal();
+    }
+});
+
+// ========================================
 // Initialize
 // ========================================
 console.log('Geodesy Landing Page initialized');
