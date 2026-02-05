@@ -446,6 +446,57 @@ a {
 }
 
 /* ========================================
+   Why Us Section
+   ======================================== */
+.why-us {
+    background: #f8f9fa;
+    padding: 100px 0;
+}
+
+.why-us__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.why-us-card {
+    background: #fff;
+    padding: 40px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--accent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-us-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(245, 166, 35, 0.15);
+}
+
+.why-us-card__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid rgba(245, 166, 35, 0.2);
+}
+
+.why-us-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.why-us-card__content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+/* ========================================
    Features Section (Light)
    ======================================== */
 .features {
@@ -1956,6 +2007,11 @@ a {
         gap: 16px;
     }
 
+    .why-us__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
     .applications__inner,
     .about__inner,
     .kit__inner,
@@ -2158,6 +2214,24 @@ a {
 
     .intro-services__item span {
         font-size: 13px;
+    }
+
+    .why-us {
+        padding: 60px 0;
+    }
+
+    .why-us-card {
+        padding: 28px 20px;
+    }
+
+    .why-us-card__title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+
+    .why-us-card__content p {
+        font-size: 14px;
     }
 
     .special-offer {
