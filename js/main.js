@@ -484,6 +484,45 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ========================================
+// Intro Services Accordion
+// ========================================
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-item__header');
+
+    header.addEventListener('click', () => {
+        // Toggle current item
+        const wasActive = item.classList.contains('active');
+
+        // Close all items
+        accordionItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+        });
+
+        // Open clicked item if it wasn't active
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// ========================================
+// Logo Click - Scroll to Top
+// ========================================
+const logo = document.querySelector('.logo');
+
+if (logo) {
+    logo.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ========================================
 // Initialize
 // ========================================
 console.log('Geodesy Landing Page initialized');
