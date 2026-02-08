@@ -861,19 +861,25 @@ a {
 }
 
 .clients__item {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--text-white);
-    white-space: nowrap;
-    letter-spacing: 2px;
-    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
+.clients__item img {
+    height: 80px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
 .clients__item:hover {
-    opacity: 1;
-    color: var(--accent);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Clients */
@@ -887,7 +893,12 @@ a {
     }
 
     .clients__item {
-        font-size: 24px;
+        padding: 16px 24px;
+    }
+
+    .clients__item img {
+        height: 60px;
+        max-width: 150px;
     }
 }
 
@@ -901,7 +912,12 @@ a {
     }
 
     .clients__item {
-        font-size: 18px;
+        padding: 12px 20px;
+    }
+
+    .clients__item img {
+        height: 50px;
+        max-width: 120px;
     }
 }
 
